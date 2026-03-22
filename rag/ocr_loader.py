@@ -5,7 +5,6 @@ import io
 import os
 from langchain_core.documents import Document
 
-# Only set path on Windows — on Linux (Streamlit Cloud) it's in PATH automatically
 if os.name == "nt":
     pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
