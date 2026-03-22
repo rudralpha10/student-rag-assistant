@@ -2,9 +2,12 @@ import fitz
 import pytesseract
 from PIL import Image
 import io
+import os
 from langchain_core.documents import Document
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# Only set path on Windows — on Linux (Streamlit Cloud) it's in PATH automatically
+if os.name == "nt":
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 def ocr_pdf(file_path):
     doc = fitz.open(file_path)
