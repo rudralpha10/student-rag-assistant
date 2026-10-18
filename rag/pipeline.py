@@ -9,7 +9,7 @@ load_dotenv()
 
 def build_qa_chain(retriever):
     llm = ChatGroq(
-        model="llama-3.3-70b-versatile",
+        model="openai/gpt-oss-120b",
         temperature=0.3,
         api_key=os.getenv("GROQ_API_KEY")
     )
